@@ -1,23 +1,33 @@
 {
-  "manifest_version": 2,
-
-  "name": "Wide Github",
-  "description": "Change all Github repository and gist pages to be full width and dynamically sized.",
-  "version": "1.2.0",
-
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://github.com/*", "https://gist.github.com/*"],
-      "css": ["wide-github.css"]
+    "author": "xthexder (Ported by Steve Syfuhs)",
+    "browser_action": {
+        "default_icon" : {
+            "20" : "icon.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://github.com/*",
+                "https://gist.github.com/*"
+            ],
+            "css": [
+                "wide-github.css"
+            ]
+        }
+    ],
+    "description": "Change all Github repository and gist pages to be full width and dynamically sized.",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.githubusercontent.com/xthexder/wide-github/master/LICENSE"
+        }
+    ],
+    "manifest_version": 2,
+    "name": "Wide Github",
+    "version": "1.2.0",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
     }
-  ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://raw.githubusercontent.com/xthexder/wide-github/master/LICENSE"
-    }
-  ]
 }
